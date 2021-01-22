@@ -1,4 +1,4 @@
-# tento program zisti, ci je zadane cislo delitelne 3
+# tento program zisti, ci je cislo delitelne zadanym delitelom
 
 cislo = int(input("zadaj akekolvek cele cislo: "))
 if cislo % 3 == 0:
