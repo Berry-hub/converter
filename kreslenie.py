@@ -1,4 +1,4 @@
-# tento program nakresli podla tvojho zadania slnko alebo kvet 
+# tento program nakresli podla tvojho zadania slnko alebo kvet, neskor ho doplnim o nieco viac
 
 odpoved = input("Chces nakreslit 'slnko' alebo 'kvet'? ")
 while odpoved == 'slnko' or 'kvet':
