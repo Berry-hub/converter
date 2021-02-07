@@ -5,7 +5,7 @@ def faktorial(n):
     elif n == 0:
         print("faktorial cisla 0 je 1")
     else:
-        for i in range(1,n+1):
+        for i in range(1,n):
             n = n * i
-            return(n//i)
+        return n
 faktorial(7)
