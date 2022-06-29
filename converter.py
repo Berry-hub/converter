@@ -29,8 +29,13 @@ def click():
     # shows converted values
     global couple
     input_value = insert_value.get()
+
     output.delete(0.0, 'end')
-    if couple in btn_dict.keys() or couple in btn_reverse_dict:
+    if input_value == '':
+        result = 'no input!'
+    elif input_value.strip()[0] == '-':
+        result = 'negative input!'
+    elif couple in btn_dict.keys() or couple in btn_reverse_dict:
         try:
             if couple == 'inch':
                 result = float(input_value) * 2.54
@@ -48,8 +53,8 @@ def click():
                 result = float(input_value) / 0.45359237    # reverse
             elif couple == 'gram':
                 result = float(input_value) / 28.3495231    # reverse
-        except:
-            result = 'input must be a number'    # not yet raising error for negative numbers!!!
+        except ValueError:
+            result = 'input must be a number'
     else:
         result = 'no choice to convert'
     output.insert('end', result)
@@ -94,8 +99,8 @@ submit_btn = tk.Button(window, text='CONVERT', font='Arial 12 bold', width=10, f
 submit_btn.grid(row=lenght+3, column=1,padx=10, pady=10)
 
 # output window
-output = tk.Text(window, width=10, height=1.5, bg='light pink', font='Arial 17')
-output.grid(row=lenght+4, column=1, padx=10, pady=20)
+output = tk.Text(window, width=12, height=1.5, bg='light pink', font='Arial 17')
+output.grid(row=lenght+4, column=1, rowspan=3, padx=10, pady=20)
 
 # exit button
 btn_exit = tk.Button(window, text='exit', width=10, fg='dark grey', command=close_window)
